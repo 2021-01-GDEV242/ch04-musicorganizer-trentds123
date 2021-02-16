@@ -66,6 +66,15 @@ public class MusicOrganizer
 
         playTrack(ranIndexForSong.nextInt(tracks.size -1));
     }
+
+    public void playRandomTrack(){
+        ArrayList<Tracks> copyOfTracks = this.tracks;
+        Random ranIndexForSong = new Random();
+        int numToBeRemoved = ranIndexForSong.nextInt(copyOfTracks.size -1);
+        playTrack(numToBeRemoved);
+        copyOfTracks.remove(numToBeRemoved);
+
+    }
     
     /**
      * Return the number of tracks in the collection.
